@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "timesheet_entries",
+  "info": {
+    "singularName": "timesheet-entry",
+    "pluralName": "timesheet-entries",
+    "displayName": "Timesheet Entry"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date": {
+      "type": "date"
+    },
+    "task": {
+      "type": "string"
+    },
+    "hours": {
+      "type": "decimal"
+    },
+    "entryStatus": {
+      "type": "enumeration",
+      "enum": [
+        "Pending",
+        "Submitted",
+        "Approved"
+      ]
+    },
+    "weekStart": {
+      "type": "date"
+    },
+    "weekEnd": {
+      "type": "date"
+    },
+    "project": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::project.project",
+      "inversedBy": "timesheet_entries"
+    }
+  }
+}

@@ -655,6 +655,39 @@ export interface ApiNewsItemNewsItem extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiProjectProject extends Struct.CollectionTypeSchema {
+  collectionName: 'projects';
+  info: {
+    displayName: 'Project';
+    pluralName: 'projects';
+    singularName: 'project';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    code: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::project.project'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    timesheet_entries: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::timesheet-entry.timesheet-entry'
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiRedirectRedirect extends Struct.CollectionTypeSchema {
   collectionName: 'redirects';
   info: {
@@ -860,6 +893,78 @@ export interface ApiSitemapSitemap extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTimesheetEntryTimesheetEntry
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'timesheet_entries';
+  info: {
+    displayName: 'Timesheet Entry';
+    pluralName: 'timesheet-entries';
+    singularName: 'timesheet-entry';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    date: Schema.Attribute.Date;
+    entryStatus: Schema.Attribute.Enumeration<
+      ['Pending', 'Submitted', 'Approved']
+    >;
+    hours: Schema.Attribute.Decimal;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::timesheet-entry.timesheet-entry'
+    > &
+      Schema.Attribute.Private;
+    project: Schema.Attribute.Relation<'manyToOne', 'api::project.project'>;
+    publishedAt: Schema.Attribute.DateTime;
+    task: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    weekEnd: Schema.Attribute.Date;
+    weekStart: Schema.Attribute.Date;
+  };
+}
+
+export interface ApiTimesheetSummaryTimesheetSummary
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'timesheet_summaries';
+  info: {
+    displayName: 'Timesheet Summary';
+    pluralName: 'timesheet-summaries';
+    singularName: 'timesheet-summary';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::timesheet-summary.timesheet-summary'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    summaryStatus: Schema.Attribute.Enumeration<
+      ['Missing', 'Incomplete', 'Completed']
+    > &
+      Schema.Attribute.DefaultTo<'Missing'>;
+    totalHours: Schema.Attribute.Decimal;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    weekEnd: Schema.Attribute.Date;
+    weekStart: Schema.Attribute.Date;
   };
 }
 
@@ -1455,10 +1560,13 @@ declare module '@strapi/strapi' {
       'api::form-submission.form-submission': ApiFormSubmissionFormSubmission;
       'api::form.form': ApiFormForm;
       'api::news-item.news-item': ApiNewsItemNewsItem;
+      'api::project.project': ApiProjectProject;
       'api::redirect.redirect': ApiRedirectRedirect;
       'api::remote-config.remote-config': ApiRemoteConfigRemoteConfig;
       'api::route.route': ApiRouteRoute;
       'api::sitemap.sitemap': ApiSitemapSitemap;
+      'api::timesheet-entry.timesheet-entry': ApiTimesheetEntryTimesheetEntry;
+      'api::timesheet-summary.timesheet-summary': ApiTimesheetSummaryTimesheetSummary;
       'api::translation.translation': ApiTranslationTranslation;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

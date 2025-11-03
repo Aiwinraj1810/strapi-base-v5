@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "timesheet_summaries",
+  "info": {
+    "singularName": "timesheet-summary",
+    "pluralName": "timesheet-summaries",
+    "displayName": "Timesheet Summary"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "weekStart": {
+      "type": "date"
+    },
+    "weekEnd": {
+      "type": "date"
+    },
+    "totalHours": {
+      "type": "decimal"
+    },
+    "summaryStatus": {
+      "type": "enumeration",
+      "default": "Missing",
+      "enum": [
+        "Missing",
+        "Incomplete",
+        "Completed"
+      ]
+    }
+  }
+}
