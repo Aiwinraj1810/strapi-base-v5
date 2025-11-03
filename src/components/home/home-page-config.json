@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_home_home_page_configs",
+  "info": {
+    "displayName": "Home Page Config",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "text"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "AboutBannerTitle": {
+      "type": "text"
+    },
+    "AboutBannerSubtitle": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

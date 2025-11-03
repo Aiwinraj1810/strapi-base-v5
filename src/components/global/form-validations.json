@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_global_form_validations",
+  "info": {
+    "displayName": "Form Validations",
+    "icon": "cursor"
+  },
+  "options": {},
+  "attributes": {
+    "ErrorMessage": {
+      "type": "string"
+    },
+    "MaxFiles": {
+      "type": "integer",
+      "min": 1,
+      "default": 1
+    }
+  }
+}

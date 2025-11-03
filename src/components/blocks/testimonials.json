@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_blocks_testimonials",
+  "info": {
+    "displayName": "Testimonials",
+    "icon": "discuss"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "ShowBlockNumber": {
+      "type": "boolean"
+    },
+    "Items": {
+      "type": "component",
+      "component": "elements.image-title-description-item",
+      "repeatable": true
+    },
+    "Common": {
+      "type": "component",
+      "component": "global.common",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

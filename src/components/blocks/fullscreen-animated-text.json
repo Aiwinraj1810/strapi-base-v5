@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_blocks_fullscreen_animated_texts",
+  "info": {
+    "displayName": "Fullscreen Animated Text",
+    "icon": "play"
+  },
+  "options": {},
+  "attributes": {
+    "Items": {
+      "type": "component",
+      "component": "elements.fullscreen-animated-text-item",
+      "repeatable": true
+    },
+    "Common": {
+      "type": "component",
+      "component": "global.common",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_blocks_simple_image_galleries",
+  "info": {
+    "displayName": "Simple Image Gallery",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Slides": {
+      "type": "component",
+      "component": "elements.image-video-item",
+      "repeatable": true
+    },
+    "Common": {
+      "type": "component",
+      "component": "global.common",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

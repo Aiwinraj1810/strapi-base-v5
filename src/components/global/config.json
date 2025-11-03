@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_global_configs",
+  "info": {
+    "displayName": "Config",
+    "icon": "lock"
+  },
+  "options": {},
+  "attributes": {
+    "ConfigKey": {
+      "type": "string"
+    },
+    "ConfigValue": {
+      "type": "text"
+    }
+  }
+}

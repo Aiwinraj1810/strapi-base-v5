@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_elements_sticky_cards_items",
+  "info": {
+    "displayName": "Sticky Cards Item",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Text": {
+      "type": "text"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Color": {
+      "type": "enumeration",
+      "default": "RoseGold",
+      "enum": [
+        "RoseGold",
+        "Blue",
+        "DarkBlue",
+        "Orange"
+      ]
+    }
+  },
+  "config": {}
+}

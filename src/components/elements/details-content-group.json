@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_elements_details_content_groups",
+  "info": {
+    "displayName": "Details Content Group",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "FullWidth": {
+      "type": "boolean"
+    },
+    "Parallax": {
+      "type": "boolean"
+    },
+    "MobileInline": {
+      "type": "boolean"
+    },
+    "Items": {
+      "type": "component",
+      "component": "elements.details-content-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

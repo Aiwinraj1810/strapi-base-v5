@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_blocks_contact_banners",
+  "info": {
+    "displayName": "Contact Banner",
+    "icon": "phone"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "SubTitle": {
+      "type": "string"
+    },
+    "PhoneNumber": {
+      "type": "string"
+    },
+    "Email": {
+      "type": "email"
+    },    
+    "Media": {
+      "type": "component",
+      "component": "elements.image-video-item",
+      "repeatable": false
+    },
+    "Common": {
+      "type": "component",
+      "component": "global.common",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

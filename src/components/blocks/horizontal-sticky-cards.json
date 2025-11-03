@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_blocks_horizontal_sticky_cards",
+  "info": {
+    "displayName": "Horizontal Sticky Cards",
+    "icon": "filter"
+  },
+  "options": {},
+  "attributes": {
+    "Items": {
+      "type": "component",
+      "component": "elements.sticky-cards-item",
+      "repeatable": true
+    },
+    "Common": {
+      "type": "component",
+      "component": "global.common",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

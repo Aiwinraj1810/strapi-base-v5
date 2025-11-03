@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_blocks_quote_blocks",
+  "info": {
+    "displayName": "Quote Block",
+    "icon": "quote"
+  },
+  "options": {},
+  "attributes": {
+    "Quote": {
+      "type": "text"
+    },
+    "Author": {
+      "type": "string"
+    },
+    "Common": {
+      "type": "component",
+      "component": "global.common",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

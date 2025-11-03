@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_elements_team_items",
+  "info": {
+    "displayName": "Team Item",
+    "icon": "user"
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Designation": {
+      "type": "string"
+    },
+    "Email": {
+      "type": "email"
+    },
+    "PhoneNumber": {
+      "type": "string"
+    },
+    "Profile": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "CalendarCode": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_footer_social_links",
+  "info": {
+    "displayName": "Social Links",
+    "icon": "twitter"
+  },
+  "options": {},
+  "attributes": {
+    "social_link": {
+      "type": "string"
+    },
+    "social_icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

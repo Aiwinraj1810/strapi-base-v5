@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_blocks_sticky_cards",
+  "info": {
+    "displayName": "Sticky Cards",
+    "icon": "filter"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Items": {
+      "type": "component",
+      "component": "elements.sticky-cards-item",
+      "repeatable": true
+    },
+    "Common": {
+      "type": "component",
+      "component": "global.common",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

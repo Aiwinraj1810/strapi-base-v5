@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_global_form_submissions",
+  "info": {
+    "displayName": "Form Submissions",
+    "icon": "information",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Label": {
+      "type": "string"
+    },
+    "Value": {
+      "type": "string"
+    },
+    "Type": {
+      "type": "string"
+    },
+    "SubmissionKey": {
+      "type": "string"
+    }
+  }
+}

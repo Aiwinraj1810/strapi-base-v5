@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_blocks_clients",
+  "info": {
+    "displayName": "Clients",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "text"
+    },
+    "Subtitle": {
+      "type": "string"
+    },
+    "Common": {
+      "type": "component",
+      "component": "global.common",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_blocks_details_contents",
+  "info": {
+    "displayName": "Details Content",
+    "icon": "file"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "text"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Items": {
+      "type": "component",
+      "component": "elements.details-content-group",
+      "repeatable": true
+    },
+    "Common": {
+      "type": "component",
+      "component": "global.common",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

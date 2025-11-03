@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_blocks_thank_yous",
+  "info": {
+    "displayName": "Thank You",
+    "icon": "check"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "SubTitle": {
+      "type": "text"
+    },
+    "Common": {
+      "type": "component",
+      "component": "global.common",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

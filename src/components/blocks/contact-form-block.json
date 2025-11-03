@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_blocks_contact_form_blocks",
+  "info": {
+    "displayName": "Contact Form Block",
+    "icon": "envelop"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Form": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::form.form"
+    },
+    "Common": {
+      "type": "component",
+      "component": "global.common",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

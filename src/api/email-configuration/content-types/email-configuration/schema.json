@@ -1,0 +1,39 @@
+{
+  "kind": "singleType",
+  "collectionName": "email_configurations",
+  "info": {
+    "singularName": "email-configuration",
+    "pluralName": "email-configurations",
+    "displayName": "Email Configuration"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "EmailTemplate": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "customField",
+      "options": {
+        "preset": "defaultHtml"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "DefaultEmailSender": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    }
+  }
+}

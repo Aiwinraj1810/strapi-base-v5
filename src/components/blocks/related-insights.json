@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_blocks_related_insights",
+  "info": {
+    "displayName": "Related Insights",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "limit": {
+      "type": "integer",
+      "default": 3
+    },
+    "Common": {
+      "type": "component",
+      "component": "global.common",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

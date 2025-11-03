@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_global_commons",
+  "info": {
+    "displayName": "Common",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "HideBlock": {
+      "type": "boolean"
+    },
+    "BlockID": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

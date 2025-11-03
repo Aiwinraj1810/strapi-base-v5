@@ -1,0 +1,48 @@
+{
+  "name": "strapi-base-v-5",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Strapi application",
+  "scripts": {
+    "build": "strapi build",
+    "deploy": "strapi deploy",
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "strapi": "strapi",
+    "upgrade": "npx @strapi/upgrade latest",
+    "build-prod": "NODE_OPTIONS=--max-old-space-size=4096 strapi build"
+  },
+  "dependencies": {
+    "@_sh/strapi-plugin-ckeditor": "^5.0.1",
+    "@redon2inc/strapi-plugin-refresh-token": "^0.1.4",
+    "@strapi/plugin-cloud": "5.23.0",
+    "@strapi/plugin-users-permissions": "5.23.0",
+    "@strapi/provider-email-nodemailer": "5.23.0",
+    "@strapi/provider-email-sendgrid": "5.23.0",
+    "@strapi/provider-upload-aws-s3": "5.23.0",
+    "@strapi/strapi": "5.23.0",
+    "pg": "^8.13.3",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "simple-node-logger": "^21.8.12",
+    "strapi-plugin-dashboard": "^1.0.2",
+    "strapi-plugin-schema-visualizer": "^1.0.5",
+    "strapi-plugin-tablify": "^1.0.3",
+    "styled-components": "^6.0.0",
+    "ua-parser-js": "^2.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=22.x.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "uuid": "8f7c49cf-753d-43f1-beb7-97647cadf56c"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_blocks_image_video_text_fill_on_scrolls",
+  "info": {
+    "displayName": "Image-Video-Text Fill On Scroll",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "Items": {
+      "type": "component",
+      "component": "elements.image-video-item",
+      "repeatable": true
+    },
+    "Common": {
+      "type": "component",
+      "component": "global.common",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

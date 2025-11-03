@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_global_form_select_options",
+  "info": {
+    "displayName": "Form Select Options",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "Label": {
+      "type": "string",
+      "required": true
+    },
+    "Value": {
+      "type": "string",
+      "required": true
+    },
+    "SendToEmail": {
+      "type": "string"
+    }
+  }
+}

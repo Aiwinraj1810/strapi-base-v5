@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_blocks_video_players",
+  "info": {
+    "displayName": "Video Player",
+    "icon": "play"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "VideoUrl": {
+      "type": "string"
+    },
+    "PreviewVideoUrl": {
+      "type": "string"
+    },
+    "Poster": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Common": {
+      "type": "component",
+      "component": "global.common",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

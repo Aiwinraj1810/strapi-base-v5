@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_elements_image_video_items",
+  "info": {
+    "displayName": "Image-Video Item",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "VideoUrl": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

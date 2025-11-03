@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_elements_image_title_description_items",
+  "info": {
+    "displayName": "Image Title Description Item",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "text"
+    },
+    "Subtitle": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "link": {
+      "type": "string"
+    },
+    "linkLabel": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

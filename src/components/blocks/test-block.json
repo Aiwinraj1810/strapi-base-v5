@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_blocks_test_blocks",
+  "info": {
+    "displayName": "TestBlock",
+    "icon": "attachment"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_blocks_full_width_images",
+  "info": {
+    "displayName": "Full Width Image",
+    "icon": "landscape"
+  },
+  "options": {},
+  "attributes": {
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "VideoURL": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_blocks_image_sliders",
+  "info": {
+    "displayName": "Image Slider",
+    "icon": "landscape"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "text"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Items": {
+      "type": "component",
+      "component": "elements.image-video-item",
+      "repeatable": true
+    },
+    "Common": {
+      "type": "component",
+      "component": "global.common",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

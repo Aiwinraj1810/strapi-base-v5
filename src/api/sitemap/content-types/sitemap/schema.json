@@ -1,0 +1,92 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sitemaps",
+  "info": {
+    "singularName": "sitemap",
+    "pluralName": "sitemaps",
+    "displayName": "1.0.0 - Sitemap",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "PageTitle": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "PageURL": {
+      "type": "uid",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "targetField": "PageTitle",
+      "maxLength": 75
+    },
+    "ParentPage": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sitemap.sitemap"
+    },
+    "PageType": {
+      "type": "enumeration",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "default": "default",
+      "enum": [
+        "default",
+        "news-listing",
+        "news-detail"
+      ]
+    },
+    "ExcludeFromSitemap": {
+      "type": "boolean",
+      "private": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": false
+    },
+    "SEO": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "global.seo",
+      "repeatable": false
+    },
+    "Blocks": {
+      "type": "dynamiczone",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "components": [
+        "blocks.two-column-content-block",
+        "blocks.full-width-image",
+        "blocks.quote-block",
+        "elements.link"
+      ]
+    }
+  }
+}

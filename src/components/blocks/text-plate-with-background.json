@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_blocks_text_plate_with_backgrounds",
+  "info": {
+    "displayName": "Text Plate With Background",
+    "icon": "message"
+  },
+  "options": {},
+  "attributes": {
+    "Position": {
+      "type": "enumeration",
+      "enum": [
+        "TL",
+        "TC",
+        "TR",
+        "CL",
+        "CC",
+        "CR",
+        "BL",
+        "BC",
+        "BR"
+      ]
+    },
+    "Items": {
+      "type": "component",
+      "component": "elements.details-content-item",
+      "repeatable": true
+    },
+    "Common": {
+      "type": "component",
+      "component": "global.common",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

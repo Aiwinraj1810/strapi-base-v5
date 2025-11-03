@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_blocks_quote_with_backgrounds",
+  "info": {
+    "displayName": "Quote With Background",
+    "icon": "quote"
+  },
+  "options": {},
+  "attributes": {
+    "Text": {
+      "type": "text"
+    },
+    "Author": {
+      "type": "string"
+    },
+    "Subtitle": {
+      "type": "string"
+    },
+    "VideoUrl": {
+      "type": "string"
+    },
+    "Poster": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "TextColor": {
+      "type": "enumeration",
+      "enum": [
+        "white",
+        "black",
+        "orange"
+      ]
+    },
+    "Common": {
+      "type": "component",
+      "component": "global.common",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

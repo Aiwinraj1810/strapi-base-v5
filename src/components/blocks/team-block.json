@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_blocks_team_blocks",
+  "info": {
+    "displayName": "Team Block",
+    "icon": "emotionHappy"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "TeamMemberOne": {
+      "type": "component",
+      "component": "elements.team-item",
+      "repeatable": false
+    },
+    "TeamMemberTwo": {
+      "type": "component",
+      "component": "elements.team-item",
+      "repeatable": false
+    },
+    "TeamMemberThree": {
+      "type": "component",
+      "component": "elements.team-item",
+      "repeatable": false
+    },
+    "Common": {
+      "type": "component",
+      "component": "global.common",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

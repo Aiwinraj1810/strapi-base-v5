@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_global_seos",
+  "info": {
+    "displayName": "SEO",
+    "icon": "dashboard",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "MetaTitle": {
+      "type": "string"
+    },
+    "MetaDescription": {
+      "type": "text"
+    },
+    "MetaImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "MetaRobots": {
+      "type": "string"
+    },
+    "StructuredData": {
+      "type": "json"
+    }
+  }
+}

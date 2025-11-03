@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_footer_links_groups",
+  "info": {
+    "displayName": "Links group",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "HiddenOnMobile": {
+      "type": "boolean",
+      "default": false
+    },
+    "Items": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

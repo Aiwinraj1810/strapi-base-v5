@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_elements_details_content_items",
+  "info": {
+    "displayName": "Details Content Item",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Subtitle": {
+      "type": "string"
+    },
+    "VideoUrl": {
+      "type": "string"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "CustomWidthPercentage": {
+      "type": "integer"
+    }
+  },
+  "config": {}
+}

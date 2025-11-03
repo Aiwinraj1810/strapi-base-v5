@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_elements_fullscreen_animated_text_items",
+  "info": {
+    "displayName": "Fullscreen Animated Text Item",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "Subtitle": {
+      "type": "string"
+    },
+    "Text": {
+      "type": "text"
+    },
+    "VideoUrl": {
+      "type": "string"
+    },
+    "Poster": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

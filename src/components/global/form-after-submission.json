@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_global_form_after_submissions",
+  "info": {
+    "displayName": "Form After Submission",
+    "icon": "link"
+  },
+  "options": {},
+  "attributes": {
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "message",
+        "link"
+      ]
+    },
+    "Message": {
+      "type": "text"
+    },
+    "Link": {
+      "type": "string"
+    }
+  }
+}

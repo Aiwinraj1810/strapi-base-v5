@@ -1,0 +1,54 @@
+{
+  "collectionName": "components_global_form_fields",
+  "info": {
+    "displayName": "Form Fields",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Label": {
+      "type": "string"
+    },
+    "Type": {
+      "type": "enumeration",
+      "required": true,
+      "default": "text",
+      "enum": [
+        "text",
+        "number",
+        "email",
+        "textarea",
+        "select",
+        "upload",
+        "checkbox",
+        "radio",
+        "hidden",
+        "phone",
+        "country"
+      ]
+    },
+    "SubmissionKey": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Placeholder": {
+      "type": "string"
+    },
+    "Validations": {
+      "type": "component",
+      "component": "global.form-validations",
+      "repeatable": false
+    },
+    "SelectOptions": {
+      "type": "component",
+      "component": "global.form-select-options",
+      "repeatable": true
+    },
+    "Mandatory": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

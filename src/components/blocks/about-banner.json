@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_blocks_about_banners",
+  "info": {
+    "displayName": "About Banner",
+    "icon": "grid"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "text"
+    },
+    "Subtitle": {
+      "type": "string"
+    },
+    "VideoUrl": {
+      "type": "string"
+    },
+    "Poster": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "IsHomePage": {
+      "type": "boolean"
+    },
+    "Common": {
+      "type": "component",
+      "component": "global.common",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

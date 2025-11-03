@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_elements_cookies_policies",
+  "info": {
+    "displayName": "Cookies Policy",
+    "icon": "cog"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "SubTitle": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

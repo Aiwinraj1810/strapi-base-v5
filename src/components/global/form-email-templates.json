@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_global_form_email_templates",
+  "info": {
+    "displayName": "Form Email Templates",
+    "icon": "envelop"
+  },
+  "options": {},
+  "attributes": {
+    "SenderEmail": {
+      "type": "string"
+    },
+    "RecipientEmail": {
+      "type": "string"
+    },
+    "EmailSubject": {
+      "type": "string"
+    },
+    "Enabled": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

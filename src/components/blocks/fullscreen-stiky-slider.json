@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_blocks_fullscreen_stiky_sliders",
+  "info": {
+    "displayName": "Fullscreen Sticky Slider",
+    "icon": "filter"
+  },
+  "options": {},
+  "attributes": {
+    "Items": {
+      "type": "component",
+      "component": "elements.image-title-description-item",
+      "repeatable": true
+    },
+    "Common": {
+      "type": "component",
+      "component": "global.common",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}
