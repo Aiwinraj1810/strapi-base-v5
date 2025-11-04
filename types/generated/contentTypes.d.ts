@@ -905,7 +905,7 @@ export interface ApiTimesheetEntryTimesheetEntry
     singularName: 'timesheet-entry';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
