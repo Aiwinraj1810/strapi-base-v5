@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_blocks_headers",
+  "info": {
+    "displayName": "Header",
+    "icon": "alien"
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "cta_text": {
+      "type": "string"
+    },
+    "cta_link": {
+      "type": "string"
+    },
+    "background_color": {
+      "type": "string"
+    },
+    "menu_links": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

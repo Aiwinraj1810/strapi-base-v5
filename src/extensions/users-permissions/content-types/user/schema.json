@@ -73,6 +73,12 @@
       "mappedBy": "user",
       "private": true,
       "configurable": false
+    },
+    "timesheet_entries": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::timesheet-entry.timesheet-entry",
+      "mappedBy": "users_permissions_user"
     }
   }
 }

@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "app_users",
+  "info": {
+    "singularName": "app-user",
+    "pluralName": "app-users",
+    "displayName": "App User"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "username": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "company": {
+      "type": "string"
+    },
+    "timesheet_summaries": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::timesheet-summary.timesheet-summary",
+      "mappedBy": "app_user"
+    },
+    "password": {
+      "type": "password",
+      "private": true,
+      "required": true
+    }
+  }
+}

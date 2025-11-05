@@ -85,7 +85,8 @@
         "blocks.two-column-content-block",
         "blocks.full-width-image",
         "blocks.quote-block",
-        "elements.link"
+        "elements.link",
+        "blocks.header"
       ]
     }
   }

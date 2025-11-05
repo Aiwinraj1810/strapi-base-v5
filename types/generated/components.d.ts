@@ -145,6 +145,21 @@ export interface BlocksGallery extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksHeader extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_headers';
+  info: {
+    displayName: 'Header';
+    icon: 'alien';
+  };
+  attributes: {
+    background_color: Schema.Attribute.String;
+    cta_link: Schema.Attribute.String;
+    cta_text: Schema.Attribute.String;
+    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    menu_links: Schema.Attribute.Component<'elements.link', true>;
+  };
+}
+
 export interface BlocksHorizontalStickyCards extends Struct.ComponentSchema {
   collectionName: 'components_blocks_horizontal_sticky_cards';
   info: {
@@ -709,6 +724,7 @@ declare module '@strapi/strapi' {
       'blocks.fullscreen-animated-text': BlocksFullscreenAnimatedText;
       'blocks.fullscreen-stiky-slider': BlocksFullscreenStikySlider;
       'blocks.gallery': BlocksGallery;
+      'blocks.header': BlocksHeader;
       'blocks.horizontal-sticky-cards': BlocksHorizontalStickyCards;
       'blocks.image-slider': BlocksImageSlider;
       'blocks.image-video-text-fill-on-scroll': BlocksImageVideoTextFillOnScroll;
