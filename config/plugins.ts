@@ -8,7 +8,7 @@ const CF_UPLOAD_PROVIDER = "cloudflare-r2";
 export default ({ env }) => ({
   // ..other plugins
   upload: getUploadProviderConfig(env),
-  email: getEmailProviderConfig(env),  
+  email: getEmailProviderConfig(env),
   "schema-visualizer": {
     enabled: true,
   },
@@ -17,6 +17,8 @@ export default ({ env }) => ({
   },
   "users-permissions": {
     config: {
+      jwtSecret:
+        env("JWT_SECRET"),
       jwt: {
         /* the following  parameter will be used to generate:
              - regular tokens with username and password

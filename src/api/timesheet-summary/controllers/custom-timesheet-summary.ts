@@ -9,6 +9,22 @@ export default factories.createCoreController(
   ({ strapi }) => ({
     async find(ctx) {
       try {
+        const authHeader = ctx.request.header.authorization;
+        strapi.log.info("🔹 Auth Header:", authHeader);
+
+        if (!authHeader) {
+          strapi.log.warn("❌ No Authorization header found!");
+        }
+
+        const user = ctx.state.user;
+        if (!user) {
+          strapi.log.warn(
+            "❌ Authenticated user not found. JWT might be invalid."
+          );
+        } else {
+          strapi.log.info("✅ Authenticated User:", user);
+        }
+
         const year = new Date().getFullYear();
         const query = ctx.query as Record<string, any>;
 
@@ -35,7 +51,6 @@ export default factories.createCoreController(
             const weekEnd = new Date(w.weekEnd);
             return weekStart >= normalizedStart && weekEnd <= normalizedEnd;
           });
-
         }
 
         const where: Record<string, any> = {};
@@ -46,7 +61,6 @@ export default factories.createCoreController(
         if (normalizedEnd)
           where.weekEnd = { $lte: normalizedEnd.toISOString().split("T")[0] };
         if (rawStatus) where.summaryStatus = { $eq: rawStatus };
-
 
         const existingSummaries = await strapi.db
           .query("api::timesheet-summary.timesheet-summary")
@@ -59,9 +73,11 @@ export default factories.createCoreController(
               "summaryStatus",
             ],
             orderBy: { weekStart: "asc" },
-            where,
+            where : {
+              ...where,
+              users_permissions_user: user.id
+            },
           });
-
 
         let merged = allWeeks.map((week) => {
           const match = existingSummaries.find(
@@ -71,9 +87,7 @@ export default factories.createCoreController(
         });
 
         if (rawStatus) {
-          merged = merged.filter(
-            (item) => item.summaryStatus === rawStatus
-          );
+          merged = merged.filter((item) => item.summaryStatus === rawStatus);
         }
 
         const startIndex = (page - 1) * pageSize;
