@@ -1006,7 +1006,6 @@ export interface ApiTimesheetSummaryTimesheetSummary
     draftAndPublish: false;
   };
   attributes: {
-    app_user: Schema.Attribute.Relation<'manyToOne', 'api::app-user.app-user'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1025,6 +1024,10 @@ export interface ApiTimesheetSummaryTimesheetSummary
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    user: Schema.Attribute.Relation<
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
     weekEnd: Schema.Attribute.Date;
     weekStart: Schema.Attribute.Date;
   };
@@ -1751,6 +1754,10 @@ export interface PluginUsersPermissionsUser
     timesheet_entries: Schema.Attribute.Relation<
       'oneToMany',
       'api::timesheet-entry.timesheet-entry'
+    >;
+    timesheet_summaries: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::timesheet-summary.timesheet-summary'
     >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

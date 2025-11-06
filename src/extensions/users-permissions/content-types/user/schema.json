@@ -79,6 +79,12 @@
       "relation": "oneToMany",
       "target": "api::timesheet-entry.timesheet-entry",
       "mappedBy": "users_permissions_user"
+    },
+    "timesheet_summaries": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::timesheet-summary.timesheet-summary",
+      "mappedBy": "user"
     }
   }
 }
