@@ -1025,7 +1025,6 @@ export interface ApiSitemapSitemap extends Struct.CollectionTypeSchema {
         'blocks.about-banner',
         'global.text-image',
         'elements.counter',
-        'blocks.layered-image',
         'blocks.impact-section',
         'blocks.vertical-carousel',
         'elements.awards-list',

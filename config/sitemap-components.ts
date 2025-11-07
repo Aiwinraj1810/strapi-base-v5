@@ -1,3 +1,5 @@
+//config\sitemap-components.ts
+
 const POPULATE_ALL = {
   populate: "*",
 };
@@ -29,6 +31,12 @@ module.exports = () => {
       "header.header": {
         fields: ["Title", "Subtitle"],
         populate: { Banner: POPULATE_ALL },
+      },
+      "global.text-image": {
+        fields: ["title", "description", "ctaText", "ctaUrl"],
+        populate: {
+          contentImage: POPULATE_IMAGE,
+        },
       },
       "blocks.content": {
         fields: ["content"],
@@ -63,6 +71,23 @@ module.exports = () => {
         populate: {
           Poster: POPULATE_IMAGE,
           Common: POPULATE_ALL,
+        },
+      },
+      "blocks.counter-main": {
+        populate: {
+          Counter: POPULATE_ALL,
+        },
+      },
+
+
+      "blocks.layered-parent": {
+        populate: {
+          layeredItem: {
+            populate: {
+              mainImage: {populate : "*"},
+              layerImage: POPULATE_IMAGE,
+            },
+          },
         },
       },
     },
