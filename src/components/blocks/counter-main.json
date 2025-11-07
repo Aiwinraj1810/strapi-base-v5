@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_blocks_counter_mains",
+  "info": {
+    "displayName": "Counter Main"
+  },
+  "options": {},
+  "attributes": {
+    "Counter": {
+      "type": "component",
+      "component": "elements.counter",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

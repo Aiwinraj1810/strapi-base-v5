@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_blocks_layered_images",
+  "info": {
+    "displayName": "Layered Image"
+  },
+  "options": {},
+  "attributes": {
+    "section": {
+      "type": "richtext"
+    },
+    "mainImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "layerImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

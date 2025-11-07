@@ -82,12 +82,19 @@
         }
       },
       "components": [
-        "blocks.two-column-content-block",
         "blocks.full-width-image",
-        "blocks.quote-block",
         "elements.link",
-        "blocks.header",
-        "blocks.about-banner"
+        "blocks.about-banner",
+        "global.text-image",
+        "elements.counter",
+        "blocks.layered-image",
+        "blocks.impact-section",
+        "blocks.vertical-carousel",
+        "elements.awards-list",
+        "blocks.layered-parent",
+        "blocks.counter-main",
+        "blocks.carousel-vertical-fade",
+        "blocks.awards-block"
       ]
     }
   }

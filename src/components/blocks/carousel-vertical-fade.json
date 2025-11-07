@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blocks_carousel_vertical_fade_s",
+  "info": {
+    "displayName": "Carousel Vertical Fade "
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "verticalCarousel": {
+      "type": "component",
+      "component": "blocks.vertical-carousel",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

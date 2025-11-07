@@ -16,6 +16,31 @@ export interface BlocksAboutBanner extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksAwardsBlock extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_awards_blocks';
+  info: {
+    displayName: 'Awards Block';
+  };
+  attributes: {
+    awardsList: Schema.Attribute.Component<'elements.awards-list', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface BlocksCarouselVerticalFade extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_carousel_vertical_fade_s';
+  info: {
+    displayName: 'Carousel Vertical Fade ';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    verticalCarousel: Schema.Attribute.Component<
+      'blocks.vertical-carousel',
+      true
+    >;
+  };
+}
+
 export interface BlocksClients extends Struct.ComponentSchema {
   collectionName: 'components_blocks_clients';
   info: {
@@ -74,6 +99,16 @@ export interface BlocksContentBlock extends Struct.ComponentSchema {
         }
       >;
     EnablePadding: Schema.Attribute.Boolean;
+  };
+}
+
+export interface BlocksCounterMain extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_counter_mains';
+  info: {
+    displayName: 'Counter Main';
+  };
+  attributes: {
+    Counter: Schema.Attribute.Component<'elements.counter', true>;
   };
 }
 
@@ -196,6 +231,51 @@ export interface BlocksImageVideoTextFillOnScroll
   attributes: {
     Common: Schema.Attribute.Component<'global.common', false>;
     Items: Schema.Attribute.Component<'elements.image-video-item', true>;
+  };
+}
+
+export interface BlocksImpactSection extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_impact_sections';
+  info: {
+    displayName: 'Impact Section';
+  };
+  attributes: {
+    backgroundImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    description: Schema.Attribute.RichText;
+    heading: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface BlocksLayeredImage extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_layered_images';
+  info: {
+    displayName: 'Layered Image';
+  };
+  attributes: {
+    layerImage: Schema.Attribute.Media<'images'>;
+    mainImage: Schema.Attribute.Media<'images'>;
+    section: Schema.Attribute.RichText;
+  };
+}
+
+export interface BlocksLayeredImageItem extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_layered_image_items';
+  info: {
+    displayName: 'Layered Image Item';
+  };
+  attributes: {};
+}
+
+export interface BlocksLayeredParent extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_layered_parents';
+  info: {
+    displayName: 'Layered Parent';
+  };
+  attributes: {
+    layeredItem: Schema.Attribute.Component<'blocks.layered-image', true>;
   };
 }
 
@@ -365,6 +445,20 @@ export interface BlocksTwoColumnContentBlock extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksVerticalCarousel extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_vertical_carousels';
+  info: {
+    displayName: 'Vertical Carousel';
+  };
+  attributes: {
+    carouselDescription: Schema.Attribute.RichText;
+    carouselItem: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface BlocksVideoPlayer extends Struct.ComponentSchema {
   collectionName: 'components_blocks_video_players';
   info: {
@@ -383,6 +477,20 @@ export interface BlocksVideoPlayer extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsAwardsList extends Struct.ComponentSchema {
+  collectionName: 'components_elements_awards_lists';
+  info: {
+    displayName: 'Awards List';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    link: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    year: Schema.Attribute.Integer;
+  };
+}
+
 export interface ElementsCookiesPolicy extends Struct.ComponentSchema {
   collectionName: 'components_elements_cookies_policies';
   info: {
@@ -392,6 +500,17 @@ export interface ElementsCookiesPolicy extends Struct.ComponentSchema {
   attributes: {
     SubTitle: Schema.Attribute.Text;
     Title: Schema.Attribute.String;
+  };
+}
+
+export interface ElementsCounter extends Struct.ComponentSchema {
+  collectionName: 'components_elements_counters';
+  info: {
+    displayName: 'Counter';
+  };
+  attributes: {
+    counter: Schema.Attribute.String;
+    counterText: Schema.Attribute.String;
   };
 }
 
@@ -681,6 +800,19 @@ export interface GlobalFormValidations extends Struct.ComponentSchema {
   };
 }
 
+export interface GlobalMenuLinks extends Struct.ComponentSchema {
+  collectionName: 'components_global_menu_links';
+  info: {
+    displayName: 'Menu Links';
+    icon: 'attachment';
+  };
+  attributes: {
+    IsDropdown: Schema.Attribute.Boolean;
+    Title: Schema.Attribute.String;
+    Url: Schema.Attribute.String;
+  };
+}
+
 export interface GlobalSeo extends Struct.ComponentSchema {
   collectionName: 'components_global_seos';
   info: {
@@ -694,6 +826,22 @@ export interface GlobalSeo extends Struct.ComponentSchema {
     MetaRobots: Schema.Attribute.String;
     MetaTitle: Schema.Attribute.String;
     StructuredData: Schema.Attribute.JSON;
+  };
+}
+
+export interface GlobalTextImage extends Struct.ComponentSchema {
+  collectionName: 'components_global_text_images';
+  info: {
+    displayName: 'Text Image';
+  };
+  attributes: {
+    contentImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    ctaText: Schema.Attribute.String;
+    ctaUrl: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -715,10 +863,13 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'blocks.about-banner': BlocksAboutBanner;
+      'blocks.awards-block': BlocksAwardsBlock;
+      'blocks.carousel-vertical-fade': BlocksCarouselVerticalFade;
       'blocks.clients': BlocksClients;
       'blocks.contact-banner': BlocksContactBanner;
       'blocks.contact-form-block': BlocksContactFormBlock;
       'blocks.content-block': BlocksContentBlock;
+      'blocks.counter-main': BlocksCounterMain;
       'blocks.details-content': BlocksDetailsContent;
       'blocks.full-width-image': BlocksFullWidthImage;
       'blocks.fullscreen-animated-text': BlocksFullscreenAnimatedText;
@@ -728,6 +879,10 @@ declare module '@strapi/strapi' {
       'blocks.horizontal-sticky-cards': BlocksHorizontalStickyCards;
       'blocks.image-slider': BlocksImageSlider;
       'blocks.image-video-text-fill-on-scroll': BlocksImageVideoTextFillOnScroll;
+      'blocks.impact-section': BlocksImpactSection;
+      'blocks.layered-image': BlocksLayeredImage;
+      'blocks.layered-image-item': BlocksLayeredImageItem;
+      'blocks.layered-parent': BlocksLayeredParent;
       'blocks.quote-block': BlocksQuoteBlock;
       'blocks.quote-with-background': BlocksQuoteWithBackground;
       'blocks.related-insights': BlocksRelatedInsights;
@@ -739,8 +894,11 @@ declare module '@strapi/strapi' {
       'blocks.text-plate-with-background': BlocksTextPlateWithBackground;
       'blocks.thank-you': BlocksThankYou;
       'blocks.two-column-content-block': BlocksTwoColumnContentBlock;
+      'blocks.vertical-carousel': BlocksVerticalCarousel;
       'blocks.video-player': BlocksVideoPlayer;
+      'elements.awards-list': ElementsAwardsList;
       'elements.cookies-policy': ElementsCookiesPolicy;
+      'elements.counter': ElementsCounter;
       'elements.details-content-group': ElementsDetailsContentGroup;
       'elements.details-content-item': ElementsDetailsContentItem;
       'elements.fullscreen-animated-text-item': ElementsFullscreenAnimatedTextItem;
@@ -759,7 +917,9 @@ declare module '@strapi/strapi' {
       'global.form-select-options': GlobalFormSelectOptions;
       'global.form-submissions': GlobalFormSubmissions;
       'global.form-validations': GlobalFormValidations;
+      'global.menu-links': GlobalMenuLinks;
       'global.seo': GlobalSeo;
+      'global.text-image': GlobalTextImage;
       'home.home-page-config': HomeHomePageConfig;
     }
   }

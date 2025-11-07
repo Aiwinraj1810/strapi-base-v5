@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_blocks_vertical_carousels",
+  "info": {
+    "displayName": "Vertical Carousel"
+  },
+  "options": {},
+  "attributes": {
+    "carouselItem": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "carouselDescription": {
+      "type": "richtext"
+    }
+  },
+  "config": {}
+}

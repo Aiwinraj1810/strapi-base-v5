@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_blocks_layered_parents",
+  "info": {
+    "displayName": "Layered Parent"
+  },
+  "options": {},
+  "attributes": {
+    "layeredItem": {
+      "type": "component",
+      "component": "blocks.layered-image",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

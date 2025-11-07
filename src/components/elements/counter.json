@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_elements_counters",
+  "info": {
+    "displayName": "Counter"
+  },
+  "options": {},
+  "attributes": {
+    "counter": {
+      "type": "string"
+    },
+    "counterText": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

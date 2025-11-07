@@ -643,6 +643,85 @@ export interface ApiFormForm extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiHeaderBlockHeaderBlock extends Struct.SingleTypeSchema {
+  collectionName: 'header_blocks';
+  info: {
+    displayName: 'headerBlock';
+    pluralName: 'header-blocks';
+    singularName: 'header-block';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    background_color: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    cta_link: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    cta_text: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::header-block.header-block'
+    >;
+    logo: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    menu_links: Schema.Attribute.Component<'global.menu-links', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    search_enabled: Schema.Attribute.Boolean &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    show_language_toggle: Schema.Attribute.Boolean &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    site_title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiNewsCategoryNewsCategory
   extends Struct.CollectionTypeSchema {
   collectionName: 'news_categories';
@@ -941,12 +1020,19 @@ export interface ApiSitemapSitemap extends Struct.CollectionTypeSchema {
   attributes: {
     Blocks: Schema.Attribute.DynamicZone<
       [
-        'blocks.two-column-content-block',
         'blocks.full-width-image',
-        'blocks.quote-block',
         'elements.link',
-        'blocks.header',
         'blocks.about-banner',
+        'global.text-image',
+        'elements.counter',
+        'blocks.layered-image',
+        'blocks.impact-section',
+        'blocks.vertical-carousel',
+        'elements.awards-list',
+        'blocks.layered-parent',
+        'blocks.counter-main',
+        'blocks.carousel-vertical-fade',
+        'blocks.awards-block',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{
@@ -1842,6 +1928,7 @@ declare module '@strapi/strapi' {
       'api::faq.faq': ApiFaqFaq;
       'api::form-submission.form-submission': ApiFormSubmissionFormSubmission;
       'api::form.form': ApiFormForm;
+      'api::header-block.header-block': ApiHeaderBlockHeaderBlock;
       'api::news-category.news-category': ApiNewsCategoryNewsCategory;
       'api::news-item.news-item': ApiNewsItemNewsItem;
       'api::project.project': ApiProjectProject;

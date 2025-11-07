@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_global_menu_links",
+  "info": {
+    "displayName": "Menu Links",
+    "icon": "attachment"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Url": {
+      "type": "string"
+    },
+    "IsDropdown": {
+      "type": "boolean"
+    }
+  },
+  "config": {}
+}
