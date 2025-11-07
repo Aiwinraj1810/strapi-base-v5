@@ -1,5 +1,3 @@
-//src\api\timesheet-summary\controllers\custom-timesheet-summary.ts
-
 import { factories } from "@strapi/strapi";
 import { generateYearlyTimesheetSummaries } from "../../../lib/generate-weeks";
 import { startOfWeek, endOfWeek } from "date-fns";
@@ -9,20 +7,10 @@ export default factories.createCoreController(
   ({ strapi }) => ({
     async find(ctx) {
       try {
-        const authHeader = ctx.request.header.authorization;
-        strapi.log.info("🔹 Auth Header:", authHeader);
-
-        if (!authHeader) {
-          strapi.log.warn("❌ No Authorization header found!");
-        }
-
         const user = ctx.state.user;
         if (!user) {
-          strapi.log.warn(
-            "❌ Authenticated user not found. JWT might be invalid."
-          );
-        } else {
-          strapi.log.info("✅ Authenticated User:", user);
+          strapi.log.warn("❌ No authenticated user found.");
+          return ctx.unauthorized("User not authenticated");
         }
 
         const year = new Date().getFullYear();
@@ -42,10 +30,11 @@ export default factories.createCoreController(
           ? endOfWeek(new Date(rawEnd), { weekStartsOn: 1 })
           : null;
 
+        // 🧩 Generate all weeks for the year
         let allWeeks = generateYearlyTimesheetSummaries(year);
 
+        // Filter by date range if provided
         if (normalizedStart && normalizedEnd) {
-          const beforeCount = allWeeks.length;
           allWeeks = allWeeks.filter((w) => {
             const weekStart = new Date(w.weekStart);
             const weekEnd = new Date(w.weekEnd);
@@ -53,69 +42,60 @@ export default factories.createCoreController(
           });
         }
 
-        const where: Record<string, any> = {};
+        // Prepare where filter for Strapi query
+        const where: Record<string, any> = { users_permissions_user: user.id };
         if (normalizedStart)
-          where.weekStart = {
-            $gte: normalizedStart.toISOString().split("T")[0],
-          };
+          where.weekStart = { $gte: normalizedStart.toISOString().split("T")[0] };
         if (normalizedEnd)
           where.weekEnd = { $lte: normalizedEnd.toISOString().split("T")[0] };
         if (rawStatus) where.summaryStatus = { $eq: rawStatus };
 
+        // 🟢 Fetch summaries for this user
         const existingSummaries = await strapi.db
           .query("api::timesheet-summary.timesheet-summary")
           .findMany({
-            select: [
-              "id",
-              "weekStart",
-              "weekEnd",
-              "totalHours",
-              "summaryStatus",
-            ],
+            select: ["id", "weekStart", "weekEnd", "totalHours", "summaryStatus"],
             orderBy: { weekStart: "asc" },
-            where : {
-              ...where,
-              users_permissions_user: user.id
-            },
+            where,
           });
 
-        let merged = allWeeks.map((week) => {
-          const match = existingSummaries.find(
-            (e) => e.weekStart === week.weekStart
+        // 🟢 Merge generated week list with existing DB summaries
+        const merged = allWeeks.map((week) => {
+          const existing = existingSummaries.find(
+            (s) => s.weekStart === week.weekStart
           );
-          return match ? { ...week, ...match } : week;
+          return existing ? { ...week, ...existing } : { ...week, totalHours: 0, summaryStatus: "Missing" };
         });
 
-        if (rawStatus) {
-          merged = merged.filter((item) => item.summaryStatus === rawStatus);
-        }
+        // Apply status filter if needed (redundant but harmless)
+        const filtered = rawStatus
+          ? merged.filter((item) => item.summaryStatus === rawStatus)
+          : merged;
 
+        // Paginate
         const startIndex = (page - 1) * pageSize;
-        const paginatedData = merged.slice(startIndex, startIndex + pageSize);
+        const paginatedData = filtered.slice(startIndex, startIndex + pageSize);
 
+        // 🟢 Return response
         return {
           data: paginatedData,
           meta: {
             pagination: {
               page,
               pageSize,
-              pageCount: Math.ceil(merged.length / pageSize),
-              total: merged.length,
+              pageCount: Math.ceil(filtered.length / pageSize),
+              total: filtered.length,
             },
             normalizedRange: {
-              from: normalizedStart
-                ? normalizedStart.toISOString().split("T")[0]
-                : null,
-              to: normalizedEnd
-                ? normalizedEnd.toISOString().split("T")[0]
-                : null,
+              from: normalizedStart?.toISOString().split("T")[0] ?? null,
+              to: normalizedEnd?.toISOString().split("T")[0] ?? null,
             },
             appliedStatus: rawStatus || "All",
-            totalWeeks: merged.length,
             generatedForYear: year,
           },
         };
       } catch (err) {
+        strapi.log.error("❌ Failed to generate timesheet summaries:", err);
         ctx.throw(500, "Failed to generate timesheet summaries");
       }
     },

@@ -86,7 +86,8 @@
         "blocks.full-width-image",
         "blocks.quote-block",
         "elements.link",
-        "blocks.header"
+        "blocks.header",
+        "blocks.about-banner"
       ]
     }
   }

@@ -643,12 +643,13 @@ export interface ApiFormForm extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiNewsItemNewsItem extends Struct.CollectionTypeSchema {
-  collectionName: 'news_items';
+export interface ApiNewsCategoryNewsCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'news_categories';
   info: {
-    displayName: '1.0.1 - News Item';
-    pluralName: 'news-items';
-    singularName: 'news-item';
+    displayName: 'News Category';
+    pluralName: 'news-categories';
+    singularName: 'news-category';
   };
   options: {
     draftAndPublish: true;
@@ -665,6 +666,63 @@ export interface ApiNewsItemNewsItem extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
+      'api::news-category.news-category'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'Title'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiNewsItemNewsItem extends Struct.CollectionTypeSchema {
+  collectionName: 'news_items';
+  info: {
+    displayName: '1.0.1 - News Item';
+    pluralName: 'news-items';
+    singularName: 'news-item';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Content: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Excerpt: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Image: Schema.Attribute.Media<'images'>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
       'api::news-item.news-item'
     >;
     PageTitle: Schema.Attribute.String &
@@ -678,18 +736,15 @@ export interface ApiNewsItemNewsItem extends Struct.CollectionTypeSchema {
         i18n: {
           localized: true;
         };
-      }> &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 75;
       }>;
     ParentPage: Schema.Attribute.Relation<'oneToOne', 'api::sitemap.sitemap'>;
     publishedAt: Schema.Attribute.DateTime;
-    SEO: Schema.Attribute.Component<'global.seo', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
+    PublishedDate: Schema.Attribute.Date;
+    RelatedArticles: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::news-item.news-item'
+    >;
+    SEO: Schema.Attribute.Component<'global.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -891,6 +946,7 @@ export interface ApiSitemapSitemap extends Struct.CollectionTypeSchema {
         'blocks.quote-block',
         'elements.link',
         'blocks.header',
+        'blocks.about-banner',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{
@@ -1786,6 +1842,7 @@ declare module '@strapi/strapi' {
       'api::faq.faq': ApiFaqFaq;
       'api::form-submission.form-submission': ApiFormSubmissionFormSubmission;
       'api::form.form': ApiFormForm;
+      'api::news-category.news-category': ApiNewsCategoryNewsCategory;
       'api::news-item.news-item': ApiNewsItemNewsItem;
       'api::project.project': ApiProjectProject;
       'api::redirect.redirect': ApiRedirectRedirect;

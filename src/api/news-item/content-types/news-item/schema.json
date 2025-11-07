@@ -17,36 +17,43 @@
   "attributes": {
     "PageTitle": {
       "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "PageURL": {
       "type": "uid",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
       "targetField": "PageTitle",
-      "maxLength": 75
+      "pluginOptions": { "i18n": { "localized": true } }
     },
-    "SEO": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "global.seo",
-      "repeatable": false
+    "Excerpt": {
+      "type": "text",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "Content": {
+      "type": "richtext",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "PublishedDate": {
+      "type": "date"
+    },
+    "Image": {
+      "type": "media",
+      "allowedTypes": ["images"],
+      "multiple": false
+    },
+    "RelatedArticles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::news-item.news-item"
     },
     "ParentPage": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::sitemap.sitemap"
+    },
+    "SEO": {
+      "type": "component",
+      "component": "global.seo",
+      "repeatable": false
     }
   }
 }
