@@ -93,7 +93,9 @@
         "blocks.layered-parent",
         "blocks.counter-main",
         "blocks.carousel-vertical-fade",
-        "blocks.awards-block"
+        "blocks.awards-block",
+        "blocks.banner-slider",
+        "blocks.basic-carousel"
       ]
     }
   }

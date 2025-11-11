@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_elements_items",
+  "info": {
+    "displayName": "Items"
+  },
+  "options": {},
+  "attributes": {
+    "Designation": {
+      "type": "string"
+    },
+    "Timeline": {
+      "type": "string"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

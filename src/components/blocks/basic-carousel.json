@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blocks_basic_carousels",
+  "info": {
+    "displayName": "Basic Carousel"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Items": {
+      "type": "component",
+      "component": "elements.items",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

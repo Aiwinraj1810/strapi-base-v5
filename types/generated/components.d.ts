@@ -27,6 +27,27 @@ export interface BlocksAwardsBlock extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksBannerSlider extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_banner_sliders';
+  info: {
+    displayName: 'Banner Slider';
+  };
+  attributes: {
+    Items: Schema.Attribute.Component<'blocks.items', true>;
+  };
+}
+
+export interface BlocksBasicCarousel extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_basic_carousels';
+  info: {
+    displayName: 'Basic Carousel';
+  };
+  attributes: {
+    Items: Schema.Attribute.Component<'elements.items', true>;
+    Title: Schema.Attribute.String;
+  };
+}
+
 export interface BlocksCarouselVerticalFade extends Struct.ComponentSchema {
   collectionName: 'components_blocks_carousel_vertical_fade_s';
   info: {
@@ -246,6 +267,19 @@ export interface BlocksImpactSection extends Struct.ComponentSchema {
     description: Schema.Attribute.RichText;
     heading: Schema.Attribute.String;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface BlocksItems extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_items';
+  info: {
+    displayName: 'Items';
+  };
+  attributes: {
+    Description: Schema.Attribute.String;
+    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Title: Schema.Attribute.String;
+    VideoUrl: Schema.Attribute.String;
   };
 }
 
@@ -589,6 +623,18 @@ export interface ElementsImageVideoItem extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsItems extends Struct.ComponentSchema {
+  collectionName: 'components_elements_items';
+  info: {
+    displayName: 'Items';
+  };
+  attributes: {
+    Designation: Schema.Attribute.String;
+    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Timeline: Schema.Attribute.String;
+  };
+}
+
 export interface ElementsLink extends Struct.ComponentSchema {
   collectionName: 'components_elements_links';
   info: {
@@ -864,6 +910,8 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'blocks.about-banner': BlocksAboutBanner;
       'blocks.awards-block': BlocksAwardsBlock;
+      'blocks.banner-slider': BlocksBannerSlider;
+      'blocks.basic-carousel': BlocksBasicCarousel;
       'blocks.carousel-vertical-fade': BlocksCarouselVerticalFade;
       'blocks.clients': BlocksClients;
       'blocks.contact-banner': BlocksContactBanner;
@@ -880,6 +928,7 @@ declare module '@strapi/strapi' {
       'blocks.image-slider': BlocksImageSlider;
       'blocks.image-video-text-fill-on-scroll': BlocksImageVideoTextFillOnScroll;
       'blocks.impact-section': BlocksImpactSection;
+      'blocks.items': BlocksItems;
       'blocks.layered-image': BlocksLayeredImage;
       'blocks.layered-image-item': BlocksLayeredImageItem;
       'blocks.layered-parent': BlocksLayeredParent;
@@ -904,6 +953,7 @@ declare module '@strapi/strapi' {
       'elements.fullscreen-animated-text-item': ElementsFullscreenAnimatedTextItem;
       'elements.image-title-description-item': ElementsImageTitleDescriptionItem;
       'elements.image-video-item': ElementsImageVideoItem;
+      'elements.items': ElementsItems;
       'elements.link': ElementsLink;
       'elements.sticky-cards-item': ElementsStickyCardsItem;
       'elements.team-item': ElementsTeamItem;

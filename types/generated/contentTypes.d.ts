@@ -1032,6 +1032,8 @@ export interface ApiSitemapSitemap extends Struct.CollectionTypeSchema {
         'blocks.counter-main',
         'blocks.carousel-vertical-fade',
         'blocks.awards-block',
+        'blocks.banner-slider',
+        'blocks.basic-carousel',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{

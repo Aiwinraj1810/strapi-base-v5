@@ -47,10 +47,19 @@ module.exports = () => {
       "blocks.google-map": {
         fields: ["Latitude", "Longitude"],
       },
-      "header.banner-slider": {
+      "blocks.banner-slider": {
         populate: {
           Items: {
             fields: ["Title", "Description", "VideoUrl"],
+            populate: { Image: POPULATE_IMAGE },
+          },
+          Common: POPULATE_ALL,
+        },
+      },
+      "blocks.basic-carousel": {
+        populate: {
+          Items: {
+            fields: ["Designation", "Timeline"],
             populate: { Image: POPULATE_IMAGE },
           },
           Common: POPULATE_ALL,
@@ -79,12 +88,15 @@ module.exports = () => {
         },
       },
 
+      "blocks.impact-section": {
+        fields: [POPULATE_ALL],
+      },
 
       "blocks.layered-parent": {
         populate: {
           layeredItem: {
             populate: {
-              mainImage: {populate : "*"},
+              mainImage: { populate: "*" },
               layerImage: POPULATE_IMAGE,
             },
           },

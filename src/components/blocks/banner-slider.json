@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_blocks_banner_sliders",
+  "info": {
+    "displayName": "Banner Slider"
+  },
+  "options": {},
+  "attributes": {
+    "Items": {
+      "type": "component",
+      "component": "blocks.items",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
